@@ -8,9 +8,15 @@ import {BookComponent} from './books/book/book.component';
 import {LoginComponent} from './login/login.component';
 import {AdminComponent} from './admin/admin.component';
 import {LoggedInGuard} from './logged-in.guard';
+import {AuthorComponent} from './authors/author/author.component';
+import {AuthorsComponent} from './authors/authors.component'
 
 const booksRoutes: Routes = [
   {path: ':id', component: BookComponent}
+];
+
+const authorsRoutes: Routes = [
+  {path: ':id', component: AuthorComponent}
 ];
 
 const routes: Routes = [
@@ -22,6 +28,10 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [ LoggedInGuard ]
+  },
+  {
+    path: 'authors', component: AuthorsComponent,
+      children: authorsRoutes
   },
   {path: 'books', component: BooksComponent,
     children: booksRoutes

@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AuthorsComponent } from './authors/authors.component';
+import { AuthorComponent } from './authors/author/author.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
     BookComponent,
     AuthornamesPipe,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    AuthorsComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
